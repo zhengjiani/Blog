@@ -1,0 +1,72 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.66666667rem;
+  font-size: 0.76666667rem;
+  line-height: 2.66666667rem;
+  color: white;
+  text-align: center;
+}
+.header i {
+  width: 2.13333333rem;
+  height: 2.13333333rem;
+  border-radius: 50%;
+  border: 0.06666667rem solid rgba(255, 255, 255, 0.3);
+}
+.header .menu {
+  position: absolute;
+  left: 1.46666667rem;
+  top: 0.26666667rem;
+  background: url("../../img/m_img/menu.png") no-repeat center;
+}
+.header .message {
+  position: absolute;
+  right: 1.46666667rem;
+  top: 0.26666667rem;
+  background: url("../../img/m_img/message.png") no-repeat center;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: cadetblue;
+  /* 轮播图css开始 */
+  /* 轮播图css结束 */
+}
+.content .imgs {
+  width: 100%;
+  height: 16.26666667rem;
+}
+.content .imgs .i_ul {
+  width: 400%;
+}
+.content .imgs .i_ul li {
+  float: left;
+}
+.content .imgs .i_ul_pointer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0.76666667rem;
+  margin: 0 auto;
+}
+.content .imgs .i_ul_pointer .pointer {
+  display: inline-block;
+  margin: 0 0.53333333rem;
+  width: 0.63333333rem;
+  height: 0.63333333rem;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 50%;
+}
+.content .imgs .i_ul_pointer .p_active {
+  background-color: #34ccfe!important;
+}
+.content .nav {
+  width: 100%;
+  height: 92px;
+}
+/*# sourceMappingURL=m_index.css.map */

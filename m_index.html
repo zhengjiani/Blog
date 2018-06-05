@@ -12,12 +12,40 @@
         html.style.fontSize=html.clientWidth/25+"px";
     </script>
     <title>源计划</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/m_css/m_index.css">
 </head>
 <body>
+<!--头部-->
 <header class="header">
-
+<i class="menu"></i>
+    <span>首页</span>
+<i class="message"></i>
 </header>
-<section class="content"></section>
+<!--主要内容，实现全屏滚动-->
+<section class="content">
+    <!--轮播图-->
+    <!--这个可以结合css，js单独封装成一个功能了-->
+    <div class="imgs">
+        <ul class="i_ul clear">
+            <li class="iu_li"><img src="img/1.jpg" alt=""></li>
+            <li class="iu_li"><img src="img/2.jpg" alt=""></li>
+            <li class="iu_li"><img src="img/3.jpg" alt=""></li>
+            <li class="iu_li"><img src="img/4.jpg" alt=""></li>
+        </ul>
+        <!--圆点居中的版本-->
+        <ul class="i_ul_pointer clear">
+            <li class="pointer"></li>
+            <li class="pointer"></li>
+            <li class="pointer"></li>
+            <li class="pointer p_active"></li>
+        </ul>
+    </div>
+
+    <!--四个小导航模块-->
+    <section class="nav"></section>
+</section>
+<!--脚部的页面切换按钮-->
 <footer class="footer"></footer>
 </body>
 </html>
