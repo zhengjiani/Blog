@@ -106,6 +106,22 @@
     justify-content: space-around;
     .nav_module(92, 116, 18);
   }
+  /*四个分类小模块结束*/
+  /*小组分类的列表模块开始*/
+  .group{
+
+    width: 100%;
+    margin-top: 30/@rem;
+    display: grid;
+    grid-template-columns: repeat(2, 328/@rem);
+    /*和flex很像，收藏了一个文章，讲的很好*/
+    justify-content: space-around;
+    grid-row-gap:19/@rem;
+    .item{
+      background-color: #7efe7f;
+      height: 184/@rem;
+    }
+  }
 }
 
 
@@ -114,6 +130,7 @@
 .footer {
   display: flex;
   position: fixed;
+  background-color: white;
   bottom: 0;
   left: 0;
   z-index: 999;
