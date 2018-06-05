@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var pxRatio=1/window.devicePixelRatio;
+        var html = document.documentElement;
+        document.write('<meta name="viewport" ' +
+            'content="width=device-width,user-scalable=no,' +
+            'initial-scale='+pxRatio+',maximum-scale='+pxRatio+',' +
+            'minimum-scale='+pxRatio+'">');
+        html.style.fontSize=html.clientWidth/25+"px";
+    </script>
+    <title>源计划</title>
+</head>
+<body>
+<header class="header">
+
+</header>
+<section class="content"></section>
+<footer class="footer"></footer>
+</body>
+</html>
