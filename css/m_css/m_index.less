@@ -15,7 +15,7 @@
     width: 64/@rem;
     height: 64/@rem;
     border-radius: 50%;
-    border: 2/@rem solid rgba(256,256,256,0.3);
+    border: 2/@rem solid rgba(256, 256, 256, 0.3);
   }
   .menu {
     position: absolute;
@@ -30,46 +30,65 @@
     background: url("../../img/m_img/message.png") no-repeat center;
   }
 }
+
 //主体部分css
-.content{
+.content {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: cadetblue;
+
   /* 轮播图css开始 */
-  .imgs{
+  .imgs {
+    position: relative;
     width: 100%;
     height: 488/@rem;
-  .i_ul{
-    width: 400%;
-    li{
-      float: left;
+    background-color: cadetblue;
+    .i_ul {
+      width: 400%;
+      height: 100%;
+      li {
+        text-align: center;
+        width: 25%;
+        height: 100%;
+        float: left;
+        img {
+          //height: 100%;
+          width: 100%;
+
+        }
+      }
     }
-  }
-    .i_ul_pointer{
+    .i_ul_pointer {
       position: absolute;
       width: 100%;
       text-align: center;
       bottom: 23/@rem;
       margin: 0 auto;
-      .pointer{
+      .pointer {
         display: inline-block;
-        margin:0 16/@rem;
+        margin: 0 16/@rem;
         width: 19/@rem;
         height: 19/@rem;
         overflow: hidden;
         background-color: white;
         border-radius: 50%;
       }
-      .p_active{
-        background-color: #34ccfe!important;
+      .p_active {
+        background-color: #34ccfe !important;
       }
     }
   }
   /* 轮播图css结束 */
-  .nav{
+  /* 四个分类小模块 */
+  .nav {
     width: 100%;
-    height: 92px;
+    height: 116/@rem;
+    margin-top: 42/@rem;
+    font-size: 18/@rem;
+    .item {
+      height: 116/@rem;
+      width: 92/@rem;
+    }
   }
 
 }
