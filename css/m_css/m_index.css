@@ -35,40 +35,44 @@
   width: 100%;
   height: 100%;
   padding-bottom: 4rem;
+}
+.content > .body {
+  width: 100%;
+  height: 100%;
   /* 轮播图css开始 */
   /* 轮播图css结束 */
   /* 四个分类小模块 */
   /*四个分类小模块结束*/
   /*小组分类的列表模块开始*/
 }
-.content .imgs {
+.content > .body > .imgs {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 16.26666667rem;
   background-color: cadetblue;
 }
-.content .imgs .i_ul {
+.content > .body > .imgs > .i_ul {
   width: 400%;
   height: 100%;
 }
-.content .imgs .i_ul li {
+.content > .body > .imgs > .i_ul > li {
   text-align: center;
   width: 25%;
   height: 100%;
   float: left;
 }
-.content .imgs .i_ul li img {
+.content > .body > .imgs > .i_ul > li > img {
   width: 100%;
 }
-.content .imgs .i_ul_pointer {
+.content > .body > .imgs .i_ul_pointer {
   position: absolute;
   width: 100%;
   text-align: center;
   bottom: 0.76666667rem;
   margin: 0 auto;
 }
-.content .imgs .i_ul_pointer .pointer {
+.content > .body > .imgs .i_ul_pointer .pointer {
   display: inline-block;
   margin: 0 0.53333333rem;
   width: 0.63333333rem;
@@ -77,10 +81,10 @@
   background-color: white;
   border-radius: 50%;
 }
-.content .imgs .i_ul_pointer .p_active {
+.content > .body > .imgs .i_ul_pointer .p_active {
   background-color: #34ccfe !important;
 }
-.content .nav {
+.content > .body .nav {
   display: flex;
   width: 100%;
   height: 3.86666667rem;
@@ -89,18 +93,18 @@
   text-align: center;
   font-size: 0.6rem;
 }
-.content .nav .item {
+.content > .body .nav .item {
   width: 3.06666667rem;
   height: 3.86666667rem;
 }
-.content .nav .item img {
+.content > .body .nav .item img {
   height: 3.06666667rem;
 }
-.content .nav .item span {
+.content > .body .nav .item span {
   display: inline-block;
   font-weight: 600;
 }
-.content .group {
+.content > .body .group {
   width: 100%;
   margin-top: 1rem;
   display: grid;
@@ -109,7 +113,7 @@
   justify-content: space-around;
   grid-row-gap: 0.63333333rem;
 }
-.content .group .item {
+.content > .body .group .item {
   background-color: #7efe7f;
   height: 6.13333333rem;
 }

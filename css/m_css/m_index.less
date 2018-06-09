@@ -54,75 +54,78 @@
   height: 100%;
   //padding-top: 80/@rem;
   padding-bottom: 120/@rem;
-
-  /* 轮播图css开始 */
-  .imgs {
-    overflow: hidden;
-    position: relative;
+  >.body{
     width: 100%;
-    height: 488/@rem;
-    background-color: cadetblue;
-    .i_ul {
-      width: 400%;
-      height: 100%;
-      li {
-        text-align: center;
-        width: 25%;
+    height: 100%;
+    //overflow: hidden;
+    /* 轮播图css开始 */
+    >.imgs {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 488/@rem;
+      background-color: cadetblue;
+      >.i_ul {
+        width: 400%;
         height: 100%;
-        float: left;
-        img {
-          //height: 100%;
-          width: 100%;
-
+        >li {
+          text-align: center;
+          width: 25%;
+          height: 100%;
+          float: left;
+          >img {
+            //height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .i_ul_pointer {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 23/@rem;
+        margin: 0 auto;
+        .pointer {
+          display: inline-block;
+          margin: 0 16/@rem;
+          width: 19/@rem;
+          height: 19/@rem;
+          overflow: hidden;
+          background-color: white;
+          border-radius: 50%;
+        }
+        .p_active {
+          background-color: #34ccfe !important;
         }
       }
     }
-    .i_ul_pointer {
-      position: absolute;
+    /* 轮播图css结束 */
+    /* 四个分类小模块 */
+    .nav {
+      display: flex;
       width: 100%;
-      text-align: center;
-      bottom: 23/@rem;
-      margin: 0 auto;
-      .pointer {
-        display: inline-block;
-        margin: 0 16/@rem;
-        width: 19/@rem;
-        height: 19/@rem;
-        overflow: hidden;
-        background-color: white;
-        border-radius: 50%;
-      }
-      .p_active {
-        background-color: #34ccfe !important;
+      height: 116/@rem;
+      margin-top: 42/@rem;
+      justify-content: space-around;
+      .nav_module(92, 116, 18);
+    }
+    /*四个分类小模块结束*/
+    /*小组分类的列表模块开始*/
+    .group{
+      width: 100%;
+      margin-top: 30/@rem;
+      display: grid;
+      grid-template-columns: repeat(2, 328/@rem);
+      /*和flex很像，收藏了一个文章，讲的很好*/
+      justify-content: space-around;
+      grid-row-gap:19/@rem;
+      .item{
+        background-color: #7efe7f;
+        height: 184/@rem;
       }
     }
   }
 
-  /* 轮播图css结束 */
-  /* 四个分类小模块 */
-  .nav {
-    display: flex;
-    width: 100%;
-    height: 116/@rem;
-    margin-top: 42/@rem;
-    justify-content: space-around;
-    .nav_module(92, 116, 18);
-  }
-  /*四个分类小模块结束*/
-  /*小组分类的列表模块开始*/
-  .group{
-    width: 100%;
-    margin-top: 30/@rem;
-    display: grid;
-    grid-template-columns: repeat(2, 328/@rem);
-    /*和flex很像，收藏了一个文章，讲的很好*/
-    justify-content: space-around;
-    grid-row-gap:19/@rem;
-    .item{
-      background-color: #7efe7f;
-      height: 184/@rem;
-    }
-  }
 }
 
 
