@@ -1,0 +1,3 @@
+var Carousel=function (ele) {
+    
+}

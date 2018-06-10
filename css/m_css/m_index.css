@@ -1,3 +1,6 @@
+.show {
+  display: block!important;
+}
 /*头部内容*/
 .header {
   z-index: 999;
@@ -59,6 +62,7 @@
   height: 100%;
 }
 .content > .body > .imgs > .i_ul > li {
+  display: none;
   text-align: center;
   width: 25%;
   height: 100%;
