@@ -44,6 +44,7 @@
   /* 四个分类小模块 */
   /*四个分类小模块结束*/
   /*小组分类的列表模块开始*/
+  /*小组分类的列表模块开始*/
 }
 .content > .body > .imgs {
   overflow: hidden;
@@ -90,19 +91,6 @@
   height: 3.86666667rem;
   margin-top: 1.4rem;
   justify-content: space-around;
-  text-align: center;
-  font-size: 0.6rem;
-}
-.content > .body .nav .item {
-  width: 3.06666667rem;
-  height: 3.86666667rem;
-}
-.content > .body .nav .item img {
-  height: 3.06666667rem;
-}
-.content > .body .nav .item span {
-  display: inline-block;
-  font-weight: 600;
 }
 .content > .body .group {
   width: 100%;
@@ -130,17 +118,89 @@
   padding: 0.26666667rem 1.66666667rem;
   border-top: 0.06666667rem solid #444444;
   justify-content: space-around;
+}
+.footer > .item:nth-child(1) {
   text-align: center;
   font-size: 0.6rem;
-}
-.footer .item {
-  width: 1.7rem;
   height: 2.5rem;
 }
-.footer .item img {
+.footer > .item:nth-child(1) > i {
+  display: block;
   height: 1.7rem;
+  width: 1.7rem;
+  margin: 0 auto;
+  background: url('../../img/m_img/home@3x.png') no-repeat 0 0;
+  background-size: 100% auto;
 }
-.footer .item span {
+.footer > .item:nth-child(1) > span {
+  display: inline-block;
+  font-weight: 600;
+}
+.footer > .item:nth-child(2) {
+  text-align: center;
+  font-size: 0.6rem;
+  height: 2.5rem;
+}
+.footer > .item:nth-child(2) > i {
+  display: block;
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 0 auto;
+  background: url('../../img/m_img/8@3x.png') no-repeat 0 0;
+  background-size: 100% auto;
+}
+.footer > .item:nth-child(2) > span {
+  display: inline-block;
+  font-weight: 600;
+}
+.footer > .item:nth-child(3) {
+  text-align: center;
+  font-size: 0.6rem;
+  height: 2.5rem;
+}
+.footer > .item:nth-child(3) > i {
+  display: block;
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 0 auto;
+  background: url('../../img/m_img/9@3x.png') no-repeat 0 0;
+  background-size: 100% auto;
+}
+.footer > .item:nth-child(3) > span {
+  display: inline-block;
+  font-weight: 600;
+}
+.footer > .item:nth-child(4) {
+  text-align: center;
+  font-size: 0.6rem;
+  height: 2.5rem;
+}
+.footer > .item:nth-child(4) > i {
+  display: block;
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 0 auto;
+  background: url('../../img/m_img/t-44@3x.png') no-repeat 0 0;
+  background-size: 100% auto;
+}
+.footer > .item:nth-child(4) > span {
+  display: inline-block;
+  font-weight: 600;
+}
+.footer > .item:nth-child(5) {
+  text-align: center;
+  font-size: 0.6rem;
+  height: 2.5rem;
+}
+.footer > .item:nth-child(5) > i {
+  display: block;
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 0 auto;
+  background: url('../../img/m_img/data@3x.png') no-repeat 0 0;
+  background-size: 100% auto;
+}
+.footer > .item:nth-child(5) > span {
   display: inline-block;
   font-weight: 600;
 }

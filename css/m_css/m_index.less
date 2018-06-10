@@ -1,18 +1,42 @@
 @rem: 30rem;
-.nav_module(@width,@height,@font-size) {
-  text-align: center;
-  font-size: @font-size/@rem;
-  .item {
-    width: @width/@rem;
+//.nav_module(@width,@height,@font-size) {
+//  text-align: center;
+//  font-size: @font-size/@rem;
+//  .item {
+//    width: @width/@rem;
+//    height: @height/@rem;
+//    img {
+//      height: @width/@rem;
+//    }
+//    span {
+//      display: inline-block;
+//      font-weight: 600;
+//    }
+//  }
+//}
+//模版改版，将图片改为背景图片
+.nav_module(@width,@height,@font-size,@url,@positionY:0) {
+
+  & {
+    text-align: center;
+    font-size: @font-size/@rem;
+    //width: @width/@rem;
     height: @height/@rem;
-    img {
+
+    > i {
+      display: block;
       height: @width/@rem;
+      width: @width/@rem;
+      margin: 0 auto;
+      background: url(@url) no-repeat 0 @positionY;
+      background-size: 100% auto;
     }
-    span {
+    > span {
       display: inline-block;
       font-weight: 600;
     }
   }
+
 }
 
 /*头部内容*/
@@ -54,26 +78,26 @@
   height: 100%;
   //padding-top: 80/@rem;
   padding-bottom: 120/@rem;
-  >.body{
+  > .body {
     width: 100%;
     height: 100%;
     //overflow: hidden;
     /* 轮播图css开始 */
-    >.imgs {
+    > .imgs {
       overflow: hidden;
       position: relative;
       width: 100%;
       height: 488/@rem;
       background-color: cadetblue;
-      >.i_ul {
+      > .i_ul {
         width: 400%;
         height: 100%;
-        >li {
+        > li {
           text-align: center;
           width: 25%;
           height: 100%;
           float: left;
-          >img {
+          > img {
             //height: 100%;
             width: 100%;
           }
@@ -107,28 +131,28 @@
       height: 116/@rem;
       margin-top: 42/@rem;
       justify-content: space-around;
-      .nav_module(92, 116, 18);
+      //.nav_module(92, 116, 18);
     }
     /*四个分类小模块结束*/
+
     /*小组分类的列表模块开始*/
-    .group{
+    .group {
       width: 100%;
       margin-top: 30/@rem;
       display: grid;
       grid-template-columns: repeat(2, 328/@rem);
       /*和flex很像，收藏了一个文章，讲的很好*/
       justify-content: space-around;
-      grid-row-gap:19/@rem;
-      .item{
+      grid-row-gap: 19/@rem;
+      .item {
         background-color: #7efe7f;
         height: 184/@rem;
       }
     }
+    /*小组分类的列表模块开始*/
   }
 
 }
-
-
 
 /*脚部*/
 .footer {
@@ -143,5 +167,20 @@
   padding: 8/@rem 50/@rem;
   border-top: 2/@rem solid #444444;
   justify-content: space-around;
-  .nav_module(51, 75, 18);
+  > .item:nth-child(1) {
+    .nav_module(51, 75, 18, '../../img/m_img/home@3x.png');
+  }
+  > .item:nth-child(2) {
+    .nav_module(51, 75, 18, '../../img/m_img/8@3x.png');
+  }
+  > .item:nth-child(3) {
+    .nav_module(51, 75, 18, '../../img/m_img/9@3x.png');
+  }
+  > .item:nth-child(4) {
+    .nav_module(51, 75, 18, '../../img/m_img/t-44@3x.png');
+  }
+  > .item:nth-child(5) {
+    .nav_module(51, 75, 18, '../../img/m_img/data@3x.png');
+  }
+
 }
