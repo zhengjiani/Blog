@@ -3,106 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        var pxRatio=1/window.devicePixelRatio;
+        var pxRatio = 1 / window.devicePixelRatio;
         var html = document.documentElement;
         document.write('<meta name="viewport" ' +
             'content="width=device-width,user-scalable=no,' +
-            'initial-scale='+pxRatio+',maximum-scale='+pxRatio+',' +
-            'minimum-scale='+pxRatio+'">');
-        html.style.fontSize=html.clientWidth/25+"px";
+            'initial-scale=' + pxRatio + ',maximum-scale=' + pxRatio + ',' +
+            'minimum-scale=' + pxRatio + '">');
+        html.style.fontSize = html.clientWidth / 25 + "px";
     </script>
+    <!--苹果设备会强制双击放大，和两指缩放，下面标签页没用-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>源计划</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/m_css/m_index.css">
 </head>
 <body>
-<!--头部-->
+<!--头部 80-->
 <header class="header">
-<i class="menu"></i>
-    <span>首页</span>
-<i class="message"></i>
+    <i class="menu"></i>
+    <span>主页</span>
+    <i class="message"></i>
 </header>
 <!--主要内容，实现全屏滚动-->
 <section class="content">
-    <!--轮播图-->
-    <!--这个可以结合css，js单独封装成一个功能了-->
-    <div class="imgs">
-        <ul class="i_ul clear">
-            <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
-            <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
-            <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
-            <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
-        </ul>
-        <!--圆点居中的版本-->
-        <ul class="i_ul_pointer clear">
-            <li class="pointer  p_active"></li>
-            <li class="pointer"></li>
-            <li class="pointer"></li>
-            <li class="pointer"></li>
-        </ul>
-    </div>
-
-    <!--四个分类小模块,可以使用flex,也可以使用gird,固定宽度的版本-->
-    <section class="nav">
-        <div class="item">
-            <img src="./img/m_img/nav-1.jpg" alt="">
-            <span>普通小组</span>
+    <section class="body">
+        <!--轮播图-->
+        <!--这个可以结合css，js单独封装成一个功能了-->
+        <div class="imgs">
+            <ul class="i_ul clear">
+                <li class="iu_li show"><img src="img/m_img/1.jpg" alt=""></li>
+                <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
+                <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
+                <li class="iu_li"><img src="img/m_img/1.jpg" alt=""></li>
+            </ul>
+            <!--圆点居中的版本-->
+            <ul class="i_ul_pointer clear">
+                <li class="pointer  p_active"></li>
+                <li class="pointer"></li>
+                <li class="pointer"></li>
+                <li class="pointer"></li>
+            </ul>
         </div>
-        <div class="item">
-            <img src="./img/m_img/nav-2.jpg" alt="">
-            <span>同城小组</span>
-        </div>
-        <div class="item">
-            <img src="./img/m_img/nav-3.jpg" alt="">
-            <span>创业小组</span>
-        </div>
-        <div class="item">
-            <img src="./img/m_img/nav-4.jpg" alt="">
-            <span>小组入驻</span>
-        </div>
-    </section>
-    <!--小组模块,使用grid-->
-    <section class="group">
-        <div class="item">
-            <img src="" alt="">
-        </div>
-        <div class="item">
-            <img src="" alt="">
-        </div>
-        <div class="item">
-            <img src="" alt="">
-        </div>
-        <div class="item">
-            <img src="" alt="">
-        </div>
-        <div class="item">
-            <img src="" alt="">
-        </div>
-        <div class="item">
-            <img src="" alt="">
-        </div>
+        <!--四个分类小模块,可以使用flex,也可以使用gird,固定宽度的版本-->
+        <section class="nav">
+            <div class="item">
+                <i></i>
+                <!--<img src="./img/m_img/nav-1.jpg" alt="">-->
+                <span>普通小组</span>
+            </div>
+            <div class="item">
+                <i></i>
+                <!--<img src="./img/m_img/nav-2.jpg" alt="">-->
+                <span>同城小组</span>
+            </div>
+            <div class="item">
+                <i></i>
+                <!--<img src="./img/m_img/nav-3.jpg" alt="">-->
+                <span>创业小组</span>
+            </div>
+            <div class="item">
+                <i></i>
+                <!--<img src="./img/m_img/nav-4.jpg" alt="">-->
+                <span>小组入驻</span>
+            </div>
+        </section>
+        <!--小组模块,使用grid-->
+        <section class="group">
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+        </section>
     </section>
 </section>
-<!--脚部的页面切换按钮-->
+<!--脚部的页面切换按钮 90-->
 <footer class="footer">
     <div class="item">
-        <img src="./img/m_img/home@3x.png" alt="">
+        <i></i>
+        <!--<img src="./img/m_img/home@3x.png" alt="">-->
         <span>主页</span>
     </div>
     <div class="item">
-        <img src="./img/m_img/8@3x.png" alt="">
+        <i></i>
+        <!--<img src="./img/m_img/8@3x.png" alt="">-->
         <span>实战</span>
     </div>
     <div class="item">
-        <img src="./img/m_img/9@3x.png" alt="">
+        <i></i>
+        <!--<img src="./img/m_img/9@3x.png" alt="">-->
         <span>知识体系</span>
     </div>
     <div class="item">
-        <img src="./img/m_img/t-44@3x.png" alt="">
+        <i></i>
+        <!--<img src="./img/m_img/t-44@3x.png" alt="">-->
         <span>有空</span>
     </div>
     <div class="item">
-        <img src="./img/m_img/data@3x.png" alt="">
+        <i></i>
+        <!--<img src="./img/m_img/data@3x.png" alt="">-->
         <span>个人</span>
     </div>
 </footer>
