@@ -79,8 +79,11 @@ var Carousel = function (ele) {
     // 拖拽效果
     ele.addEventListener('touchstart', function (e) {
         p_s = e.targetTouches[0].clientX;
+        e.stopPropagation();
     })
     ele.addEventListener('touchmove', function (e) {
+        // 阻止屏幕竖向横向的移动
+        e.preventDefault();
         p_n = e.targetTouches[0].clientX;
         p_d = p_n - p_s;
         if (Math.abs(p_d) > imgs_length / 10) {
@@ -99,6 +102,7 @@ var Carousel = function (ele) {
         // imgs_li[group[-1]].style.transform = 'translate(' + (-img_width + p_d) + 'px,' + 0 + 'px)';
         // imgs_li[group[1]].style.transform = 'translate(' + p_d + 'px,' + 0 + 'px)';
         // imgs_li[group[1]].style.transform = 'translate(' + (img_width + p_d) + 'px,' + 0 + 'px)';
+        e.stopPropagation();
     })
     ele.addEventListener('touchend', function (e) {
         // console.log(p_d);
@@ -109,10 +113,10 @@ var Carousel = function (ele) {
             // 向右滑动，减少
             if (p_d >= 0) {
                 direction(-1, 300);
-                auto_animate(1,500);
+                auto_animate(1, 500);
             } else {
                 direction(1, 300);
-                auto_animate(1,500)
+                auto_animate(1, 500)
             }
         }
         else {
@@ -121,29 +125,36 @@ var Carousel = function (ele) {
             imgs_li[after].style.transform = 'translate(' + img_width + 'px,' + 0 + 'px)';
             auto_animate(1, 500);
         }
+        e.stopPropagation();
     })
 
-    window.addEventListener('focus', function() {
-        auto_animate(1,500)
-    },false);
+    window.addEventListener('focus', function () {
+        auto_animate(1, 500)
+    }, false);
 
-    window.addEventListener('blur', function() {
+    window.addEventListener('blur', function () {
         window.clearInterval(timer);
-    },false);
+    }, false);
 
 }
 
 !function f() {
-var p_s,p_n,p_d;
-    var ele = document.getElementsByClassName("content")[0];
+    var p_s, p_n, p_d;
+    var ele = document.getElementsByClassName("content")[0],
+        f = document.getElementsByClassName("footer")[0]
     ele.addEventListener('touchstart', function (e) {
-        p_s = e.targetTouches[0].clientX;
+        p_s = e.targetTouches[0].clientY;
     })
     ele.addEventListener('touchmove', function (e) {
-        p_n = e.targetTouches[0].clientX;
+        p_n = e.targetTouches[0].clientY;
         p_d = p_n - p_s;
-        if (p_d >30) {
-        document.getElementsByClassName("footer")[0].style.transform="translateY(0)";
+        console.log(p_d);
+        if (p_d > 100) {
+            f.style.transform = "translateY(0)";
+        }
+        if (p_d < -100) {
+           f.style.transform = "translateY("+90/30+"rem)";
         }
     })
 }()
+
