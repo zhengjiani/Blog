@@ -101,10 +101,10 @@ var Carousel = function (ele) {
         // imgs_li[group[1]].style.transform = 'translate(' + (img_width + p_d) + 'px,' + 0 + 'px)';
     })
     ele.addEventListener('touchend', function (e) {
-        console.log(p_d);
+        // console.log(p_d);
         // 足够大开始动画
-        console.log(p_d);
-        console.log(img_width / 4);
+        // console.log(p_d);
+        // console.log(img_width / 4);
         if (Math.abs(p_d) > img_width / 4) {
             // 向右滑动，减少
             if (p_d >= 0) {
@@ -132,3 +132,18 @@ var Carousel = function (ele) {
     },false);
 
 }
+
+!function f() {
+var p_s,p_n,p_d;
+    var ele = document.getElementsByClassName("content")[0];
+    ele.addEventListener('touchstart', function (e) {
+        p_s = e.targetTouches[0].clientX;
+    })
+    ele.addEventListener('touchmove', function (e) {
+        p_n = e.targetTouches[0].clientX;
+        p_d = p_n - p_s;
+        if (p_d >30) {
+        document.getElementsByClassName("footer")[0].style.transform="translateY(0)";
+        }
+    })
+}()

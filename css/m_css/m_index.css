@@ -192,6 +192,8 @@
   padding: 0.26666667rem 1.66666667rem;
   border-top: 0.06666667rem solid #444444;
   justify-content: space-around;
+  transition: 0.8s;
+  transform: translateY(3rem);
 }
 .footer > .item:nth-child(1) {
   text-align: center;
