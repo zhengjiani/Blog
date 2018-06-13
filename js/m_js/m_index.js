@@ -5,5 +5,7 @@ var Carousel = function (ele) {
         pointer_container = ul[1],
         imgs_li = imgs_container.document.getElementsByTagName('li'),
         pointer_li = pointer_container.document.getElementsByTagName('li'),
-        imgs_length = imgs_li.length;
-        }
+        imgs_length = imgs_li.length,
+        img_width = ele.offsetWidth, now = 0, before = imgs_length - 1,
+    after = 1,
+}
