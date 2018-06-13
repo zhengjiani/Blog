@@ -123,4 +123,12 @@ var Carousel = function (ele) {
         }
     })
 
+    window.addEventListener('focus', function() {
+        auto_animate(1,500)
+    },false);
+
+    window.addEventListener('blur', function() {
+        window.clearInterval(timer);
+    },false);
+
 }
