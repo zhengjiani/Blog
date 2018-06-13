@@ -69,8 +69,8 @@
   height: 100%;
   float: left;
 }
-.content > .body > .imgs > .i_ul > li > img {
-  height: 100%;
+.content > .body > .imgs > .i_ul > li > a > img {
+  width: 100%;
 }
 .content > .body > .imgs .i_ul_pointer {
   position: absolute;
