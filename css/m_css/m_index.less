@@ -15,9 +15,10 @@
 //  }
 //}
 //模版改版，将图片改为背景图片
-.show{
-  display: block!important;
+.show {
+  display: block !important;
 }
+
 .nav_module(@width,@height,@font-size,@url,@positionY:0) {
 
   & {
@@ -54,25 +55,25 @@
   line-height: 80/@rem;
   color: white;
   text-align: center;
-  >i {
+  > i {
     width: 64/@rem;
     height: 64/@rem;
     border-radius: 50%;
     border: 2/@rem solid rgba(256, 256, 256, 0.3);
   }
-  >.menu {
+  > .menu {
     position: absolute;
     left: 44/@rem;
     top: 8/@rem;
     background: url("../../img/m_img/menu.png") no-repeat center;
-    background-size:80%;
+    background-size: 80%;
   }
-  >.message {
+  > .message {
     position: absolute;
     right: 44/@rem;
     top: 8/@rem;
     background: url("../../img/m_img/message.png") no-repeat center;
-    background-size:80%;
+    background-size: 80%;
   }
 }
 
@@ -100,14 +101,14 @@
         height: 100%;
         > li {
           position: relative;
-          display: none;
+          //display: none;
           text-align: center;
           width: 25%;
           height: 100%;
           float: left;
           > img {
-            //height: 100%;
-            width: 100%;
+            height: 100%;
+            //width: 100%;
           }
         }
       }
@@ -129,6 +130,7 @@
         .p_active {
           background-color: #34ccfe !important;
         }
+
       }
     }
     /* 轮播图css结束 */
@@ -171,9 +173,7 @@
     }
     /*小组分类的列表模块开始*/
   }
-
 }
-
 /*脚部*/
 .footer {
   display: flex;
