@@ -23,20 +23,20 @@ var btn = document.querySelectorAll(".footer>.item"),
     bl = btn.length,
     // 先给个默认初始的设置
     // 这个解决方案适用没有雪碧图和元素无控制背景图片的属性的情况
-    before = {index: 0, url: '../../img/m_img/home@3x.png'};
+    before = {index: 0, url: 'url(img/m_img/home@3x.png)'};
 
 function f(i) {
     switch (i) {
         case 0:
-            return footer( 0,"../../img/m_img/index01.jpg");
+            return footer( 0,"url(img/m_img/index01.jpg)");
         case 1:
-            return footer( 1,"../../img/m_img/activity02.jpg");
+            return footer( 1,"url(img/m_img/activity02.jpg)");
         case 2:
-            return  footer(2,"../../img/m_img/9@3x.png");
+            return  footer(2,"url(img/m_img/9@3x.png)");
         case 3:
-            return  footer(3,"../../img/m_img/break04.jpg");
+            return  footer(3,"url(img/m_img/break04.jpg)");
         case 4:
-            return footer(4,"../../img/m_img/mine05.jpg");
+            return footer(4,"url(img/m_img/mine05.jpg)");
     }
     // function (e,i) {
     // footer("../../img/m_img/index01.jpg",e,i);
@@ -61,27 +61,43 @@ function footer(i,url) {
     var url = url;
     var i = i;
     // console.log(i);
+    // 闭包，保存了i和url
     return function(e){
         // console.log(i);
         // console.log(url);
+        // 这里的this并不是指向当前对象，这个函数，而是调用他的东西
+        // console.log(this.i);
         // 正在点击的按钮，之前点击的按钮
         var btn_click = e.target,
             btn_clicked = btn[before.index];
         // 移除当前按钮的事件和函数
-        eve.remove(btn_click, f(this.i));
+// 之前写错了？
+//         eve.remove(btn_click, f(i));
+        eve.remove(btn_click);
         // 之前的元素换背景，加点击事件
+        // btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = "url("+before.url+")";
         btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = before.url;
         eve.tap(btn_clicked, f(before.index));
         // 对before重新赋值
-        before.index = this.i;
+        before.index = i;
         before.url = btn_click.style.backgroundImage;
         // 给当前按钮替换背景图片(动态的)(蓝色的那个)
-        btn_click.style.backgroundImage = this.url;
+        btn_click.style.backgroundImage = url;
+        console.log(before.index);
     }
 
 
 }
 
-for (var i = 1; i < bl; i++) {
-    eve.tap(btn[i], f(i));
+for (var j = 1;  j< bl; j++) {
+    (function(j){
+        eve.tap(btn[j], f(j));
+    })(j);
+}
+
+window.onload = function () {
+    console.log(btn[0].getElementsByTagName('i')[0].style.background);
+    console.log(btn[0].getElementsByTagName('i'));
+    // btn[0].getElementsByTagName('i')[0].style.backgroundImage="url(../../img/m_img/break04.jpg)";
+    // console.log(btn[0].getElementsByTagName('i')[0].style.backgroundImage);
 }

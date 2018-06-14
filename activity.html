@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var pxRatio = 1 / window.devicePixelRatio;
+        var html = document.documentElement;
+        document.write('<meta name="viewport" ' +
+            'content="width=device-width,user-scalable=no,' +
+            'initial-scale=' + pxRatio + ',maximum-scale=' + pxRatio + ',' +
+            'minimum-scale=' + pxRatio + '">');
+        html.style.fontSize = html.clientWidth / 25 + "px";
+    </script>
+    <title>实战</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/m_css/02.css">
+</head>
+<body>
+
+
+<!--头部 80-->
+<header class="header">
+    <i class="menu"></i>
+    <span>活动详情</span>
+    <!--<i class="message"></i>-->
+</header>
+
+<section class="content">
+    <!--背景和主要标题    -->
+    <div class="bg">
+        <section class="title">
+            <div class="l">
+                <span class="icon"><img src="" alt=""></span>
+            </div>
+            <div class="r">
+                <span class="title">第四期：XX项目开发</span>
+                <span class="title">主题：电商实战开发</span>
+                <span class="dead_line">活动截止日期：2018/08/02</span>
+            </div>
+        </section>
+    </div>
+    <!--详细信息-->
+    <div class="detail">
+
+    </div>
+</section>
+<!--脚部的页面切换按钮 90-->
+<!--准备加一个上滑出现脚部的动画 18 06/13-->
+<footer class="footer">
+    <div class="item on">
+        <i></i>
+        <!--<img src="./img/m_img/home@3x.png" alt="">-->
+        <span>主页</span>
+    </div>
+    <div class="item off">
+        <i></i>
+        <!--<img src="./img/m_img/8@3x.png" alt="">-->
+        <span>实战</span>
+    </div>
+    <div class="item off">
+        <i></i>
+        <!--<img src="./img/m_img/9@3x.png" alt="">-->
+        <span>知识体系</span>
+    </div>
+    <div class="item off">
+        <i></i>
+        <!--<img src="./img/m_img/t-44@3x.png" alt="">-->
+        <span>有空</span>
+    </div>
+    <div class="item off">
+        <i></i>
+        <!--<img src="./img/m_img/data@3x.png" alt="">-->
+        <span>个人</span>
+    </div>
+</footer>
+
+
+</body>
+</html>

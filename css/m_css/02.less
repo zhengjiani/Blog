@@ -1,0 +1,132 @@
+//为了完成任务先写好页面
+@rem: 30rem;
+
+.show {
+  display: block !important;
+}
+
+/*头部内容*/
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80/@rem;
+  font-size: 23/@rem;
+  line-height: 80/@rem;
+  color: white;
+  text-align: center;
+  > i {
+    width: 64/@rem;
+    height: 64/@rem;
+    border-radius: 50%;
+    //border: 2/@rem solid rgba(256, 256, 256, 0.3);
+  }
+  > .menu {
+    position: absolute;
+    left: 44/@rem;
+    top: 8/@rem;
+    background: url("../../img/m_img/t-16@3x.png") no-repeat center;
+    background-size: cover;
+  }
+
+}
+
+/*主体部分css*/
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //padding-top: 80/@rem;
+  padding-bottom: 120/@rem;
+  //overflow: hidden;
+  /* 背景和主要标题 */
+  > .bg {
+    z-index: 900;
+    position: relative;
+    width: 100%;
+    height: 264/@rem;
+    background: linear-gradient(to right, #4780af, #7dcdee);
+    > .title {
+      position: relative;
+      //position: absolute;
+      width: 564/@rem;
+      height: 150/@rem;
+      top: 154/@rem;
+      margin: 0 auto;
+      padding: 22/@rem 0 22/@rem 49/@rem;
+      //right: 78/@rem;
+      border: 1/@rem solid rgba(255, 255, 255, 0.3);
+      border-radius: 4/@rem;
+      background-color: white;
+      box-shadow: 0 4/@rem 4/@rem rgba(0, 0, 0, 0.4);
+      span {
+        display: block;
+        font-size: 24/@rem;
+      }
+      > .l {
+        float: left;
+        > .icon {
+          text-align: center;
+          width: 72/@rem;
+          height: 102/@rem;
+          > img {
+            height: 100%;
+          }
+        }
+      }
+      > .r {
+        float: left;
+        > .title {
+          color: #34ccfe;
+        }
+        > .dead_line {
+          color: #7d7d7d;
+        }
+      }
+
+    }
+  }
+  /* 背景和主要标题 */
+  //详细信息
+  > .detail {
+    position: relative;
+    margin: 20/@rem auto 0;
+    width: 670/@rem;
+    height: 700/@rem;
+    background-color: white;
+    border-radius: 10/@rem;
+    //box-shadow: -8/@rem 0 8/@rem rgba(000, 000, 000, 0.2),
+    //0 -8/@rem 8/@rem rgba(000, 000, 000, 0.2),
+    //8/@rem 0 8/@rem rgba(000, 000, 000, 0.2),
+    //0 8/@rem 8/@rem rgba(000, 000, 000, 0.2);
+    //-webkit-box-shadow: rgba(000, 000, 000, 0.2) 0 0 10/@rem;
+    //-moz-box-shadow: rgba(000, 000, 000, 0.2) 0 0 10/@rem;
+    //box-shadow:rgba(000, 000, 000, 0.2) 0 0 10/@rem;
+    //
+    //-webkit-box-shadow: #666 0rem 0rem 50/@rem;
+    //-moz-box-shadow: #666 0rem 0rem 50/@rem;
+    //这样也行
+    //box-shadow: 0rem 0rem 50/@rem rgba(000, 000, 000, 0.3);
+    box-shadow: rgba(000, 000, 000, 0.3) 0rem 0rem 50/@rem;
+  }
+  //详细信息
+}
+
+/*脚部*/
+.footer {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 90/@rem;
+  padding: 8/@rem 50/@rem;
+  border-top: 2/@rem solid #444444;
+  justify-content: space-around;
+  transition: 0.8s;
+  transform: translateY(90/@rem);
+}
