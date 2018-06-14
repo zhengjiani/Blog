@@ -1,7 +1,8 @@
-!function f() {
+//实现脚部动画
+;!function show_footer() {
     var p_s, p_n, p_d;
     var ele = document.getElementsByClassName("content")[0],
-        f = document.getElementsByClassName("footer")[0]
+        f = document.getElementsByClassName("footer")[0];
     ele.addEventListener('touchstart', function (e) {
         p_s = e.targetTouches[0].clientY;
     })
@@ -16,8 +17,7 @@
             f.style.transform = "translateY(" + 90 / 30 + "rem)";
         }
     })
-}()
-
+}();
 
 var btn = document.querySelectorAll(".footer>.item"),
     bl = btn.length,
@@ -28,15 +28,15 @@ var btn = document.querySelectorAll(".footer>.item"),
 function f(i) {
     switch (i) {
         case 0:
-            return footer( 0,"url(img/m_img/index01.jpg)");
+            return footer(0, "url(img/m_img/index01.jpg)");
         case 1:
-            return footer( 1,"url(img/m_img/activity02.jpg)");
+            return footer(1, "url(img/m_img/activity02.jpg)");
         case 2:
-            return  footer(2,"url(img/m_img/9@3x.png)");
+            return footer(2, "url(img/m_img/9@3x.png)");
         case 3:
-            return  footer(3,"url(img/m_img/break04.jpg)");
+            return footer(3, "url(img/m_img/break04.jpg)");
         case 4:
-            return footer(4,"url(img/m_img/mine05.jpg)");
+            return footer(4, "url(img/m_img/mine05.jpg)");
     }
     // function (e,i) {
     // footer("../../img/m_img/index01.jpg",e,i);
@@ -57,12 +57,10 @@ function f(i) {
     // return b[i](i);
 }
 
-function footer(i,url) {
-    var url = url;
-    var i = i;
+function footer(i, url) {
+
     // console.log(i);
-    // 闭包，保存了i和url
-    return function(e){
+    return function (e) {
         // console.log(i);
         // console.log(url);
         // 这里的this并不是指向当前对象，这个函数，而是调用他的东西
@@ -71,13 +69,13 @@ function footer(i,url) {
         var btn_click = e.target,
             btn_clicked = btn[before.index];
         // 移除当前按钮的事件和函数
-// 之前写错了？
-//         eve.remove(btn_click, f(i));
-        eve.remove(btn_click);
+        // 之前写错了？
+        // eve.remove(btn_click, f(i));
+        btn_click.remove&&btn_click.remove();
         // 之前的元素换背景，加点击事件
         // btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = "url("+before.url+")";
         btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = before.url;
-        eve.tap(btn_clicked, f(before.index));
+        tap(btn_clicked,f(i));
         // 对before重新赋值
         before.index = i;
         before.url = btn_click.style.backgroundImage;
@@ -89,15 +87,10 @@ function footer(i,url) {
 
 }
 
-for (var j = 1;  j< bl; j++) {
-    (function(j){
-        eve.tap(btn[j], f(j));
-    })(j);
+for (var j = 1; j < bl; j++) {
+    // (function(j){
+    tap(btn[j], f(j));
+    // eve.tap(btn[j], f(j));
+    // })(j);
 }
 
-window.onload = function () {
-    console.log(btn[0].getElementsByTagName('i')[0].style.background);
-    console.log(btn[0].getElementsByTagName('i'));
-    // btn[0].getElementsByTagName('i')[0].style.backgroundImage="url(../../img/m_img/break04.jpg)";
-    // console.log(btn[0].getElementsByTagName('i')[0].style.backgroundImage);
-}
