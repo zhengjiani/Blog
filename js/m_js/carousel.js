@@ -132,18 +132,3 @@ var Carousel = function (ele) {
     },false);
 
 }
-
-!function f() {
-var p_s,p_n,p_d;
-    var ele = document.getElementsByClassName("content")[0];
-    ele.addEventListener('touchstart', function (e) {
-        p_s = e.targetTouches[0].clientX;
-    })
-    ele.addEventListener('touchmove', function (e) {
-        p_n = e.targetTouches[0].clientX;
-        p_d = p_n - p_s;
-        if (p_d >30) {
-        document.getElementsByClassName("footer")[0].style.transform="translateY(0)";
-        }
-    })
-}()

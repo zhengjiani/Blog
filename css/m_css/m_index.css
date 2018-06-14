@@ -3,7 +3,7 @@
 }
 /*头部内容*/
 .header {
-  z-index: 999;
+  z-index: 33.3rem;
   position: fixed;
   top: 0;
   left: 0;
