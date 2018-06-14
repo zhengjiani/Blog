@@ -28,8 +28,8 @@ var eve = {
             }
         })
     },
-    remove:function (ele) {
-        ele.removeEventListener('touchstart');
-        ele.removeEventListener('touchend');
+    remove:function (ele,fn) {
+        ele.removeEventListener('touchstart',fn);
+        ele.removeEventListener('touchend',fn);
     }
 }

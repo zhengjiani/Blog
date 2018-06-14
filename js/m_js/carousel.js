@@ -138,23 +138,3 @@ var Carousel = function (ele) {
 
 }
 
-!function f() {
-    var p_s, p_n, p_d;
-    var ele = document.getElementsByClassName("content")[0],
-        f = document.getElementsByClassName("footer")[0]
-    ele.addEventListener('touchstart', function (e) {
-        p_s = e.targetTouches[0].clientY;
-    })
-    ele.addEventListener('touchmove', function (e) {
-        p_n = e.targetTouches[0].clientY;
-        p_d = p_n - p_s;
-        console.log(p_d);
-        if (p_d > 100) {
-            f.style.transform = "translateY(0)";
-        }
-        if (p_d < -100) {
-           f.style.transform = "translateY("+90/30+"rem)";
-        }
-    })
-}()
-
