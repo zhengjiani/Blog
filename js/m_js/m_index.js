@@ -1,3 +1,4 @@
+
 //实现脚部动画
 ;!function show_footer() {
     var p_s, p_n, p_d;
@@ -23,10 +24,9 @@ var btn = document.querySelectorAll(".footer>.item"),
     bl = btn.length,
     // 先给个默认初始的设置
     // 这个解决方案适用没有雪碧图和元素无控制背景图片的属性的情况
+    //因为赋值stylr操作没有改变background的属性，所以这个url属性不需要了！！！！！
     before = {index: 0, url: 'url(img/m_img/home@3x.png)'},
     removeFn=new Array(bl);
-
-
 function callback(i) {
     switch (i) {
         case 0:
@@ -62,24 +62,31 @@ function callback(i) {
 function footer(i, url) {
     // console.log(i);
     return function (e) {
+        var temp = "footer";
         // console.log(i);
         // console.log(url);
         // 这里的this并不是指向当前对象，这个函数，而是调用他的东西
         // console.log(this.i);
         // 正在点击的按钮，之前点击的按钮
-        var btn_click = e.target,
-            btn_clicked = btn[before.index];
+        var  beforeIndex=before.index,
+            btn_click = e.target,
+            btn_clicked = btn[beforeIndex];
+
+
         // 移除当前按钮的事件和函数
+        removeFn[beforeIndex]&&removeFn[beforeIndex]();
+        // console.log(removeFn[beforeIndex]);
         // 之前写错了？
         // eve.remove(btn_click, f(i));
         // btn_click.remove&&btn_click.remove();
-        // 之前的元素换背景，加点击事件
         // btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = "url("+before.url+")";
-        btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = before.url;
-        tap(btn_clicked,callback(before.index));
+        // 之前的元素换背景，加点击事件
+        // 直接赋值为空，那么图片会用之前的background属性，所以不需要这个属性了
+        // btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = before.url;
+        tap(btn_clicked,callback(beforeIndex));
         // 对before重新赋值
         before.index = i;
-        before.url = btn_click.style.backgroundImage;
+        // before.url = btn_click.style.backgroundImage;
         // 给当前按钮替换背景图片(动态的)(蓝色的那个)
         btn_click.style.backgroundImage = url;
         console.log(before.index);
@@ -93,5 +100,8 @@ for (var j = 1; j < bl; j++) {
     removeFn[j]=tap(btn[j], callback(j));
     // eve.tap(btn[j], f(j));
     // })(j);
+
+    // console.log(removeFn[j]);
 }
+
 
