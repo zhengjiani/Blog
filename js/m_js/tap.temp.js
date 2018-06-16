@@ -1,7 +1,7 @@
 var tap = function (ele, fn) {
 // 自动绑定事件？
 //  需要将函数绑定到元素上？调用元素？
-    (function (ele, fn,) {
+    (function (ele, fn) {
         // 判断一下
         var startX, startY, endX, endY;
         // 添加事件和移除事件出错
@@ -11,7 +11,7 @@ var tap = function (ele, fn) {
         //但是此时的坐标却不能正常获取计算
         console.log("zhixinle");
         ele.addEventListener("touchstart", f1);
-        ele.addEventListener("touchend", f2)
+        ele.addEventListener("touchend", f2);
         ele.remove = function (ele) {
             return function () {
                 ele.removeEventListener('touchstart', f1);
@@ -19,32 +19,19 @@ var tap = function (ele, fn) {
             }
 
         }
-    }(ele, fn));
 
-    // var remove = function () {
-    //
-    // }
-    // // 移除方法绑定到元素上？
-    // ele.remove = remove;
-
-    function f1() {
-        return function(e){
-
+        function f1(e) {
+            console.log("f1执行了");
+            var tt = e.targetTouches;
+            // 点击手指只能为一个
+            if (tt.length > 1) {
+                return;
+            }
+            // 获取初始位置
+            startX = tt[0].clientX;
+            startY = tt[0].clientY;
         }
-        console.log("f1执行了");
-        var tt = e.targetTouches;
-        // 点击手指只能为一个
-        if (tt.length > 1) {
-            return;
-        }
-        // 获取初始位置
-        console.log(tt);
-        startX = tt[0].clientX;
-        startY = tt[0].clientY;
-    }
-
-    function f2(fn) {
-        return function (e) {
+        function f2(e) {
             var ct = e.changedTouches[0];
             // 判断点击事时间
             // 判断手指移动距离
@@ -57,10 +44,17 @@ var tap = function (ele, fn) {
                 // 回调函数:点击完之后执行的函数
                 fn && fn(e);
                 return;
-            }
-        }
 
-    }
+            }
+
+        }
+    }(ele, fn));
+
+    // var remove = function () {
+    //
+    // }
+    // // 移除方法绑定到元素上？
+    // ele.remove = remove;
 }
 
 
