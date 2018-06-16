@@ -1,4 +1,15 @@
 var Carousel = function (ele) {
+
+    // 添加切換標籤頁暫停動畫的功能
+    window.addEventListener('focus', function() {
+        auto_animate(1,500);
+    },false);
+
+    window.addEventListener('blur', function() {
+        console.log('執行清除定時器方法');
+        window.clearInterval(timer);
+    },false);
+
     // 暂时默认轮播图数量大于三个
     var ul = ele.getElementsByTagName('ul'),
         imgs_container = ul[0],
@@ -127,14 +138,5 @@ var Carousel = function (ele) {
         }
         e.stopPropagation();
     })
-
-    window.addEventListener('focus', function() {
-        auto_animate(1,500)
-    },false);
-
-    window.addEventListener('blur', function() {
-        window.clearInterval(timer);
-    },false);
-
 }
 

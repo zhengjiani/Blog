@@ -9,7 +9,7 @@
     ele.addEventListener('touchmove', function (e) {
         p_n = e.targetTouches[0].clientY;
         p_d = p_n - p_s;
-        console.log(p_d);
+        // console.log(p_d);
         if (p_d > 100) {
             f.style.transform = "translateY(0)";
         }
@@ -23,9 +23,11 @@ var btn = document.querySelectorAll(".footer>.item"),
     bl = btn.length,
     // 先给个默认初始的设置
     // 这个解决方案适用没有雪碧图和元素无控制背景图片的属性的情况
-    before = {index: 0, url: 'url(img/m_img/home@3x.png)'};
+    before = {index: 0, url: 'url(img/m_img/home@3x.png)'},
+    removeFn=new Array(bl);
 
-function f(i) {
+
+function callback(i) {
     switch (i) {
         case 0:
             return footer(0, "url(img/m_img/index01.jpg)");
@@ -56,9 +58,8 @@ function f(i) {
 
     // return b[i](i);
 }
-
+// 生成回調函數
 function footer(i, url) {
-
     // console.log(i);
     return function (e) {
         // console.log(i);
@@ -71,11 +72,11 @@ function footer(i, url) {
         // 移除当前按钮的事件和函数
         // 之前写错了？
         // eve.remove(btn_click, f(i));
-        btn_click.remove&&btn_click.remove();
+        // btn_click.remove&&btn_click.remove();
         // 之前的元素换背景，加点击事件
         // btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = "url("+before.url+")";
         btn_clicked.getElementsByTagName('i')[0].style.backgroundImage = before.url;
-        tap(btn_clicked,f(i));
+        tap(btn_clicked,callback(before.index));
         // 对before重新赋值
         before.index = i;
         before.url = btn_click.style.backgroundImage;
@@ -89,7 +90,7 @@ function footer(i, url) {
 
 for (var j = 1; j < bl; j++) {
     // (function(j){
-    tap(btn[j], f(j));
+    removeFn[j]=tap(btn[j], callback(j));
     // eve.tap(btn[j], f(j));
     // })(j);
 }

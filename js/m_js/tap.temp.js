@@ -3,21 +3,29 @@ var tap = function (ele, fn) {
 //  需要将函数绑定到元素上？调用元素？
     (function (ele, fn) {
         // 判断一下
+        var test='我是局部变量'
         var startX, startY, endX, endY;
         // 添加事件和移除事件出错
         // 添加的参数和移除的需要时一致的
         // addEventListener()添加的匿名函数无法移除
         // 需要抽象成公共函数，且不加参数传入
         //但是此时的坐标却不能正常获取计算
-        console.log("zhixinle");
+        console.log("绑定事件");
         ele.addEventListener("touchstart", f1);
         ele.addEventListener("touchend", f2);
-        ele.remove = function (ele) {
-            return function () {
-                ele.removeEventListener('touchstart', f1);
-                ele.removeEventListener('touchend', f2);
-            }
-
+        // ele.remove = function (ele) {
+        //     return function () {
+        //         ele.removeEventListener('touchstart', f1);
+        //         ele.removeEventListener('touchend', f2);
+        //     }
+        //
+        // }
+        // 返回解绑事件的功能？
+        //利用闭包封装变量？
+        return function () {
+            ele.removeEventListener('touchstart', f1);
+            ele.removeEventListener('touchend', f2);
+            console.log(test+":我被return封装了");
         }
 
         function f1(e) {
@@ -31,6 +39,7 @@ var tap = function (ele, fn) {
             startX = tt[0].clientX;
             startY = tt[0].clientY;
         }
+
         function f2(e) {
             var ct = e.changedTouches[0];
             // 判断点击事时间
@@ -44,7 +53,6 @@ var tap = function (ele, fn) {
                 // 回调函数:点击完之后执行的函数
                 fn && fn(e);
                 return;
-
             }
 
         }
