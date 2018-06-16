@@ -42,7 +42,7 @@ function footer(i, url) {
         var  beforeIndex=before.index,
             btn_click = e.target,
             btn_clicked = btn[beforeIndex];
-        removeFn[beforeIndex]&&removeFn[beforeIndex].remove();
+        removeFn[beforeIndex]&&removeFn[beforeIndex].remove.call(removeFn[beforeIndex]);
         console.log(removeFn(beforeIndex).fn);
         removeFn[beforeIndex]=null;
         removeFn[beforeIndex]=new Fn(btn_clicked,callback(beforeIndex));

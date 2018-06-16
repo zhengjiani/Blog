@@ -1,26 +1,27 @@
-var tap = function (ele, fn) {
+var tap = function (ele) {
 // 自动绑定事件？
 //  需要将函数绑定到元素上？调用元素？
+//  将fn去掉依然无法解绑
     var callback = null;
-    (function (ele, fn) {
+    (function (ele) {
         // 局部变量
-        var f2 = function (e) {
-            // console.log(temp+"我是綁定和要解綁的函數");
-            var ct = e.changedTouches[0];
-            // 判断点击事时间
-            // 判断手指移动距离
-            endX = ct.clientX;
-            endY = ct.clientY;
-            // console.log(endY - startY);
-            // console.log(endX - startX);
-            if (Math.abs(endY - startY) < 20 && Math.abs(endX - startX) < 20) {
-                // console.log("判断通过");
-                // 回调函数:点击完之后执行的函数
-                fn && fn(e);
-                return;
-            }
-
-        }
+        // var f2 = function (e) {
+        //     // console.log(temp+"我是綁定和要解綁的函數");
+        //     var ct = e.changedTouches[0];
+        //     // 判断点击事时间
+        //     // 判断手指移动距离
+        //     endX = ct.clientX;
+        //     endY = ct.clientY;
+        //     // console.log(endY - startY);
+        //     // console.log(endX - startX);
+        //     if (Math.abs(endY - startY) < 20 && Math.abs(endX - startX) < 20) {
+        //         // console.log("判断通过");
+        //         // 回调函数:点击完之后执行的函数
+        //         fn && fn(e);
+        //         return;
+        //     }
+        //
+        // }
         var f1 = function (e) {
             console.log("f1执行了");
             var tt = e.targetTouches;
@@ -41,7 +42,7 @@ var tap = function (ele, fn) {
         // 需要抽象成公共函数，且不加参数传入
         //但是此时的坐标却不能正常获取计算,需要把函数放到这个函数里面来
         ele.addEventListener("touchstart", f1);
-        ele.addEventListener("touchend", f2);
+        // ele.addEventListener("touchend", f2);
         // ele.removeEventListener('touchstart', f1);
         // ele.removeEventListener('touchend', f2);
         // ele.remove = function (ele) {
@@ -67,14 +68,13 @@ var tap = function (ele, fn) {
 
         console.log("返回解绑函数怎么失败了？");
         callback = function () {
-            var that = this;
             ele.removeEventListener('touchstart',f1);
-            ele.removeEventListener('touchend',f2);
-            console.log(temp+":我被return封装了");
+            // ele.removeEventListener('touchend',f2);
+            // console.log(temp+":我被return封装了");
             // console.log(this.temp);
             // 看样子只能通过传参的方法封装？
         }
-    }(ele, fn));
+    }(ele));
     // 自执行函数里写的return不管用！！！
     return callback;
     // var remove = function () {

@@ -1,5 +1,6 @@
 
 //实现脚部动画
+// 这个还是执行不了解绑，等下和4版本比较一下为什么？？
 ;!function show_footer() {
     var p_s, p_n, p_d;
     var ele = document.getElementsByClassName("content")[0],
@@ -97,7 +98,7 @@ function footer(i, url) {
 
 for (var j = 1; j < bl; j++) {
     // (function(j){
-    removeFn[j]=tap(btn[j], callback(j));
+    removeFn[j]=tap(btn[j]);
     // eve.tap(btn[j], f(j));
     // })(j);
 

@@ -1,4 +1,4 @@
-function Fn(ele,fn) {
+function Fn(ele,fn,i) {
     var temp = {};
     temp.ele=ele;
     temp.fn = fn;

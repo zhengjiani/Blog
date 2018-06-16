@@ -205,7 +205,7 @@
   height: 1.7rem;
   width: 1.7rem;
   margin: 0 auto;
-  background: url('../../img/m_img/index01.jpg') no-repeat 0 0;
+  background: url('../../img/m_img/home@3x.png') no-repeat 0 0;
   background-size: 100% auto;
 }
 .footer > .item:nth-child(1) > span {
