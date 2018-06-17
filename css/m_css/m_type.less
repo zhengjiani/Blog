@@ -1,0 +1,59 @@
+//为了完成任务先写好页面
+@rem: 30rem;
+.show {
+  display: block !important;
+}
+
+.module {
+  width: 100%;
+  height: 100%;
+  padding: 0 35/@rem;
+}
+.header{
+  color: #9fa0a0;
+}
+
+/*主体部分css*/
+.content {
+  position: relative;
+  width: 100%;
+  //课程体系
+ >.type{
+   padding: 90/@rem 20/@rem 10/@rem;
+   border-bottom: 2/@rem solid #b9b9b9;
+   >.item{
+     letter-spacing: 1/@rem;
+     text-align: center;
+     font-size: 19/@rem;
+     padding: 10/@rem 10/@rem;
+     color: #757575;
+     float: left;
+     margin-right: 25/@rem;
+     margin-bottom: 10/@rem;
+     background-color: #f2f2f2;
+     border-radius: 8/@rem;
+   }
+   >.active{
+     color: white;
+     background-color: #34ccfe;
+   }
+ }
+  //某个体系具体详情
+  >.type_detail{
+    padding-top: 20/@rem;
+    //和前一页的模块很像，并不想抽取公共部分，偷懒
+
+    > .item {
+      position: relative;
+      width: 100%;
+      height: 233/@rem;
+      margin-bottom: 17/@rem;
+      overflow: hidden;
+      > a {
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

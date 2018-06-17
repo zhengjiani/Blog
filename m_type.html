@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var pxRatio = 1 / window.devicePixelRatio;
+        var html = document.documentElement;
+        document.write('<meta name="viewport" ' +
+            'content="width=device-width,user-scalable=no,' +
+            'initial-scale=' + pxRatio + ',maximum-scale=' + pxRatio + ',' +
+            'minimum-scale=' + pxRatio + '">');
+        html.style.fontSize = html.clientWidth / 25 + "px";
+    </script>
+    <title>知识体系</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/m_css/common.css">
+    <link rel="stylesheet" href="css/m_css/m_type.css">
+</head>
+<body>
+<!--头部 80-->
+<div class="module">
+    <header class="header">
+        <span>知识体系</span>
+        <!--<i class="message"></i>-->
+    </header>
+    <section class="content">
+        <div class="type clear">
+            <div class="item">IPHONE</div>
+            <div class="item active">ANDROID</div>
+            <div class="item">JAVA工程师</div>
+            <div class="item">前端工程师</div>
+            <div class="item">数据挖掘</div>
+            <div class="item">BLOCKCHAIN</div>
+        </div>
+        <div class="type_detail">
+            <div class="item">
+                <a href=""><img src="./img/m_img/t1.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="./img/m_img/t2.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="./img/m_img/t3.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="./img/m_img/t2.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="./img/m_img/t1.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
