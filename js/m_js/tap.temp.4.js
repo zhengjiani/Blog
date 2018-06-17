@@ -1,8 +1,7 @@
 // 终于解决了！！！这是最终版本！！
-
 var tap = function (ele, i) {
 console.log(i);
-    function callbackk(i) {
+    function callback(i) {
         switch (i) {
             case 0:
                 return footer(0, "url(img/m_img/index01.jpg)");
@@ -19,7 +18,7 @@ console.log(i);
 // 生成回調函數
         function footer(i, url) {
             return function (e) {
-                console.log("fn执行了");
+                // console.log("fn执行了");
                 var  beforeIndex=before.index,
                     btn_click = e.target,
                     btn_clicked = btn[beforeIndex];
@@ -31,15 +30,15 @@ console.log(i);
                 before.index = i;
                 btn_click.style.backgroundImage = url;
                 btn_clicked.style.backgroundImage='';
-                console.log(before.index);
+                // console.log(before.index);
             }
         }
         var tap = null;
 
         (function (ele) {
-        var fn = callbackk(i);
+        var fn = callback(i);
         var f2 = function (e) {
-            console.log("f2执行了");
+            // console.log("f2执行了");
             var ct = e.changedTouches[0];
             endX = ct.clientX;
             endY = ct.clientY;
@@ -51,7 +50,7 @@ console.log(i);
             }
         }
         var f1 = function (e) {
-            console.log("f1执行了");
+            // console.log("f1执行了");
             var tt = e.targetTouches;
             // 点击手指只能为一个
             if (tt.length > 1) {
@@ -70,7 +69,6 @@ console.log(i);
         }
     }(ele));
     return tap;
-
 }
 
 

@@ -7,7 +7,7 @@ var Carousel = function (ele) {
 
     window.addEventListener('blur', function() {
         console.log('執行清除定時器方法');
-        window.clearInterval(timer);
+        clearInterval(timer);
     },false);
 
     // 暂时默认轮播图数量大于三个
@@ -49,6 +49,7 @@ var Carousel = function (ele) {
 
     // 自动轮播
     function auto_animate(direct, speed) {
+        console.log('添加了一个定时器');
         timer = setInterval(function () {
             // 每一轮开始之后都会刷新，动画过程中执行了拖拽会怎么样？
             // 别的网站好像直接将图片置于初始状态了
@@ -98,6 +99,7 @@ var Carousel = function (ele) {
         p_n = e.targetTouches[0].clientX;
         p_d = p_n - p_s;
         if (Math.abs(p_d) > imgs_length / 10) {
+            console.log('清除了一个定时器');
             clearInterval(timer);
         }
         // 怎样才能将这些无用的设置只执行一次？
