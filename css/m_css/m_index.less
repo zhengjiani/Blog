@@ -20,7 +20,6 @@
 }
 
 .nav_module(@width,@height,@font-size,@url,@positionY:0) {
-
   & {
     text-align: center;
     font-size: @font-size/@rem;
@@ -174,37 +173,4 @@
     /*小组分类的列表模块开始*/
   }
 }
-
 /*脚部*/
-.footer {
-
-  display: flex;
-  position: fixed;
-  background-color: white;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  height: 90/@rem;
-  padding: 8/@rem 50/@rem;
-  border-top: 2/@rem solid #444444;
-  justify-content: space-around;
-  > .item:nth-child(1) {
-    //通过js初始化一下蓝色的背景
-    .nav_module(51, 75, 18, '../../img/m_img/home@3x.png');
-  }
-  > .item:nth-child(2) {
-    .nav_module(51, 75, 18, '../../img/m_img/8@3x.png');
-  }
-  > .item:nth-child(3) {
-    .nav_module(51, 75, 18, '../../img/m_img/break_03_u.jpg');
-  }
-  > .item:nth-child(4) {
-    .nav_module(51, 75, 18, '../../img/m_img/t-44@3x.png');
-  }
-  > .item:nth-child(5) {
-    .nav_module(51, 75, 18, '../../img/m_img/data@3x.png');
-  }
-  transition: 0.8s;
-  transform: translateY(90/@rem);
-}

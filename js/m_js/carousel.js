@@ -7,7 +7,10 @@ var Carousel = function (ele) {
 
     window.addEventListener('blur', function() {
         console.log('執行清除定時器方法');
-        clearInterval(timer);
+        while (timer.length>0){
+            clearInterval(timer.pop());
+        }
+
     },false);
 
     // 暂时默认轮播图数量大于三个
@@ -18,7 +21,7 @@ var Carousel = function (ele) {
         pointer_li = pointer_container.getElementsByTagName('li'),
         imgs_length = imgs_li.length,
         img_width = ele.offsetWidth, now = 0, before = imgs_length - 1,
-        after = 1, timer,
+        after = 1, timer=[],
         // 用于替代三个图片，这样利于下面简化direction的代码
         group = [imgs_length - 1, 0, 1];
     // 初始化？
@@ -50,12 +53,12 @@ var Carousel = function (ele) {
     // 自动轮播
     function auto_animate(direct, speed) {
         console.log('添加了一个定时器');
-        timer = setInterval(function () {
+        timer.push(setInterval(function () {
             // 每一轮开始之后都会刷新，动画过程中执行了拖拽会怎么样？
             // 别的网站好像直接将图片置于初始状态了
             // 先开始动画
             direction(direct, speed);
-        }, 2000);
+        }, 2000));
     }
 
     function direction(direct, speed) {
@@ -100,7 +103,9 @@ var Carousel = function (ele) {
         p_d = p_n - p_s;
         if (Math.abs(p_d) > imgs_length / 10) {
             console.log('清除了一个定时器');
-            clearInterval(timer);
+            while (timer.length>0){
+                clearInterval(timer.pop());
+            }
         }
         // 怎样才能将这些无用的设置只执行一次？
         imgs_li[before].style.transitionDuration = 0 + 'ms';

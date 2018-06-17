@@ -1,13 +1,11 @@
 //为了完成任务先写好页面
 @rem: 30rem;
-
 .show {
   display: block !important;
 }
-
 /*头部内容*/
 .header {
-  z-index: 999;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,6 +34,7 @@
 /*主体部分css*/
 .content {
   position: relative;
+  z-index: 999;
   width: 100%;
   height: 100%;
   //padding-top: 80/@rem;
@@ -58,15 +57,14 @@
       padding: 22/@rem 0 22/@rem 49/@rem;
       //right: 78/@rem;
       border: 1/@rem solid rgba(255, 255, 255, 0.3);
-      border-radius: 4/@rem;
+      border-radius: 10/@rem;
       background-color: white;
-      box-shadow: 0 4/@rem 4/@rem rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10/@rem 12/@rem rgba(0, 0, 0, 0.3);
       span {
         display: block;
         font-size: 26/@rem;
       }
       > .l {
-
         float: left;
         > .icon {
           text-align: center;
@@ -93,42 +91,68 @@
   /* 背景和主要标题 */
   //详细信息
   > .detail {
+    font-size: 26/@rem;
     position: relative;
     margin: 20/@rem auto 0;
+    padding-left: 100/@rem;
+    padding-top: 100/@rem;
+    padding-bottom: 70/@rem;
     width: 670/@rem;
-    height: 700/@rem;
     background-color: white;
     border-radius: 10/@rem;
-    //box-shadow: -8/@rem 0 8/@rem rgba(000, 000, 000, 0.2),
-    //0 -8/@rem 8/@rem rgba(000, 000, 000, 0.2),
-    //8/@rem 0 8/@rem rgba(000, 000, 000, 0.2),
-    //0 8/@rem 8/@rem rgba(000, 000, 000, 0.2);
-    //-webkit-box-shadow: rgba(000, 000, 000, 0.2) 0 0 10/@rem;
-    //-moz-box-shadow: rgba(000, 000, 000, 0.2) 0 0 10/@rem;
-    //box-shadow:rgba(000, 000, 000, 0.2) 0 0 10/@rem;
-    //
-    //-webkit-box-shadow: #666 0rem 0rem 50/@rem;
-    //-moz-box-shadow: #666 0rem 0rem 50/@rem;
-    //这样也行
-    //box-shadow: 0rem 0rem 50/@rem rgba(000, 000, 000, 0.3);
-    box-shadow: rgba(000, 000, 000, 0.3) 0rem 0rem 50/@rem;
+    box-shadow: rgba(000, 000, 000, 0.2) 0rem 0rem 50/@rem;
+    > .item {
+      position: relative;
+      height: 155/@rem;
+      margin-bottom: 24/@rem;
+      > i {
+        content: '';
+        position: absolute;
+        width: 60/@rem;
+        height: 60/@rem;
+        top: 0;
+        left: -85/@rem;
+      }
+      > .title {
+        display: block;
+        color: #34ccfe;
+        padding-bottom: 20/@rem;
+      }
+      > .detail {
+        display: block;
+        color: #7d7d7d;
+      }
+      > .split {
+        position: absolute;
+        width: 7/@rem;
+        height: 75/@rem;
+        background-color: #dbd7d5;
+        top: 78/@rem;
+        left: -57/@rem;
+      }
+
+    }
+    > .item:nth-of-type(1) > i {
+
+      background: url("../../img/m_img/p2_2.png") no-repeat center;
+    }
+    > .item:nth-of-type(2) > i {
+
+      background: url("../../img/m_img/p2_3.png") no-repeat center;
+    }
+
+    > .item:nth-of-type(3) > i {
+
+      background: url("../../img/m_img/p2_4.png") no-repeat center;
+    }
+
+    > .item:nth-of-type(4) > i {
+
+      background: url("../../img/m_img/p2_5.png") no-repeat center;
+    }
+    > .item:nth-of-type(4) > .split {
+      display: none;
+    }
   }
   //详细信息
-}
-
-/*脚部*/
-.footer {
-  display: flex;
-  position: fixed;
-  background-color: white;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  height: 90/@rem;
-  padding: 8/@rem 50/@rem;
-  border-top: 2/@rem solid #444444;
-  justify-content: space-around;
-  transition: 0.8s;
-  transform: translateY(90/@rem);
 }

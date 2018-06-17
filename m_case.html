@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var pxRatio = 1 / window.devicePixelRatio;
+        var html = document.documentElement;
+        document.write('<meta name="viewport" ' +
+            'content="width=device-width,user-scalable=no,' +
+            'initial-scale=' + pxRatio + ',maximum-scale=' + pxRatio + ',' +
+            'minimum-scale=' + pxRatio + '">');
+        html.style.fontSize = html.clientWidth / 25 + "px";
+    </script>
+    <title>实战</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="css/m_css/m_case.css">
+</head>
+<body>
+<!--头部 80-->
+<div class="module">
+    <header class="header">
+        <span>往期活动</span>
+        <!--<i class="message"></i>-->
+    </header>
+    <section class="content">
+        <div class="item">
+            <a href=""><img src="./img/m_img/c1.png" alt=""></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="./img/m_img/c2.png" alt=""></a>
+        </div>
+        <div class="item finish">
+            <a href=""><img src="./img/m_img/c1.png" alt=""></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="./img/m_img/c2.png" alt=""></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="./img/m_img/c1.png" alt=""></a>
+        </div>
+
+    </section>
+</div>
+
+</body>
+</html>

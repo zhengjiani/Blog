@@ -1,0 +1,62 @@
+//为了完成任务先写好页面
+@rem: 30rem;
+.show {
+  display: block !important;
+}
+
+.module {
+  width: 100%;
+  height: 100%;
+  padding: 0 35/@rem;
+}
+
+/*头部内容*/
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80/@rem;
+  font-size: 24/@rem;
+  line-height: 80/@rem;
+  color: white;
+  text-align: center;
+}
+
+/*主体部分css*/
+.content {
+  position: relative;
+  width: 100%;
+  background-color: #cfcfcf;
+  > .item {
+    position: relative;
+    width: 680/@rem;
+    height: 330/@rem;
+    margin-bottom: 20/@rem;
+    overflow: hidden;
+    > a {
+      > img {
+        height: 100%;
+      }
+    }
+  }
+  .finish::before{
+    content: '';
+    position: absolute;
+    width: 680/@rem;
+    height: 330/@rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .finish::after{
+    content: '';
+    position: absolute;
+    width: 288/@rem;
+    height: 173/@rem;
+    top: 120/@rem;
+    right: 25/@rem;
+    background:url("../../img/m_img/cfinish.png") no-repeat center;
+  }
+}
