@@ -1,24 +1,7 @@
 @rem: 30rem;
-//.nav_module(@width,@height,@font-size) {
-//  text-align: center;
-//  font-size: @font-size/@rem;
-//  .item {
-//    width: @width/@rem;
-//    height: @height/@rem;
-//    img {
-//      height: @width/@rem;
-//    }
-//    span {
-//      display: inline-block;
-//      font-weight: 600;
-//    }
-//  }
-//}
-//模版改版，将图片改为背景图片
 .show {
   display: block !important;
 }
-
 .nav_module(@width,@height,@font-size,@url,@positionY:0) {
   & {
     text-align: center;
@@ -41,10 +24,8 @@
   }
 
 }
-
 /*头部内容*/
 .header {
-  //color: #34ccfe;
   font-weight: 600;
   letter-spacing: 1/@rem;
   > i {
@@ -185,8 +166,11 @@
     }
     > .msg_detail {
       text-align: center;
+      //字体大小出问题
+
       font-size: 24/@rem;
       > p {
+        max-height: 999999/@rem;
         text-align: left;
       }
       > img {
@@ -195,7 +179,6 @@
       }
     }
     > .msg_operation {
-
       height: 40/@rem;
       margin-top: 18/@rem;
       margin-bottom: 44/@rem;
@@ -204,6 +187,7 @@
       }
       > .views {
         margin-right: 30/@rem;
+        color: #727171;
       }
       > .operations {
         text-align: right;
@@ -221,5 +205,28 @@
         }
       }
     }
-  }
+    >form{
+      position: relative;
+      &:after{
+        content: '评论';
+        position: absolute;
+        top: 10/@rem;
+        left: 10/@rem;
+        color: #727171;
+        font-size: 24/@rem;
+      }
+      >.msg_leave{
+        height: 50/@rem;
+        width: 100%;
+        border-radius: 10/@rem;
+        padding-left: 72/@rem;
+        //字体大小出问题
+        font-size: 24/@rem;
+        line-height: 46/@rem;
+      }
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: #34ccfe;}
+    }
+    }
+
 }
