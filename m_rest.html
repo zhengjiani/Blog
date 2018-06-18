@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var pxRatio = 1 / window.devicePixelRatio;
+        var html = document.documentElement;
+        document.write('<meta name="viewport" ' +
+            'content="width=device-width,user-scalable=no,' +
+            'initial-scale=' + pxRatio + ',maximum-scale=' + pxRatio + ',' +
+            'minimum-scale=' + pxRatio + '">');
+        html.style.fontSize = html.clientWidth / 25 + "px";
+    </script>
+    <!--苹果设备会强制双击放大，和两指缩放，下面标签页没用-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>有空</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/m_css/common.css">
+    <link rel="stylesheet" href="./css/m_css/m_rest.css">
+</head>
+<body>
+
+<header class="header">
+    <i class="menu"></i>
+    <span>幸运的人</span>
+    <i class="message"></i>
+</header>
+
+<section class="content">
+    <div class="info">
+        <div class="info_user">
+            <p>亦可赛艇</p>
+            <div class="desc">
+                <span class="head_img"><img src="./img/m_img/head1.jpg" alt=""></span>
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                “我从未见过有如此厚颜无耻之人！！！”
+                <span class="chat">
+                    +聊一聊
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="msg">
+        <div class="title clear">
+            <div class="head_img fl"><img src="./img/m_img/head2.png" alt=""></div>
+            <div class="msg_at fl">
+                <span class="msg_author">老法师的眼泪</span>
+                <span class="msg_time">今天 10:21</span>
+            </div>
+            <span class="msg_more fr"><img src="./img/m_img/r2.png" alt=""></span>
+        </div>
+        <div class="msg_detail">
+            <p>Django模板允许你通过使用“双重花括号”（如{{ variable_name }}）来指定变量，当页面被渲染出来时，这些变量会被从视图函数传递过来的值代替。模板系统也会提供表达支持（通过语法{%
+                expression %}来实现），这样就允许模板进行一些简单的操作比如迭代传递给模板的值列表。
+            </p>
+            <img src="./img/m_img/msg1.jpg" alt="">
+        </div>
+    </div>
+
+
+</section>
+</body>
+</html>
