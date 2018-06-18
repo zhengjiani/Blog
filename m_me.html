@@ -13,7 +13,8 @@
     </script>
     <title>个人</title>
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="css/m_css/m_case_detail.css">
+    <link rel="stylesheet" href="./css/m_css/common.css">
+    <link rel="stylesheet" href="css/m_css/m_me.css">
 </head>
 <body>
 
@@ -21,105 +22,23 @@
 <!--头部 80-->
 <header class="header">
     <i class="menu"></i>
-    <span>主页</span>
+    <span>个人中心</span>
     <i class="message"></i>
 </header>
 <!--主要内容，实现全屏滚动-->
 <section class="content">
-    <section class="body">
-        <!--轮播图-->
-        <!--这个可以结合css，js单独封装成一个功能了-->
-        <div class="imgs">
-            <ul class="i_ul clear">
-                <li class="iu_li"><a href="#"><img src="img/m_img/1.jpg" alt=""></a></li>
-                <li class="iu_li"><a href="#"><img src="img/m_img/n01.png" alt=""></a></li>
-                <li class="iu_li"><a href="#"><img src="img/m_img/n02.png" alt=""></a></li>
-                <li class="iu_li"><a href="#"><img src="img/m_img/n03.png" alt=""></a></li>
-            </ul>
-            <!--圆点居中的版本-->
-            <ul class="i_ul_pointer clear">
-                <li class="pointer  p_active"></li>
-                <li class="pointer"></li>
-                <li class="pointer"></li>
-                <li class="pointer"></li>
-            </ul>
-        </div>
-        <!--四个分类小模块,可以使用flex,也可以使用gird,固定宽度的版本-->
-        <section class="nav">
-            <div class="item">
-                <i></i>
-                <!--<img src="./img/m_img/nav-1.jpg" alt="">-->
-                <span>普通小组</span>
+    <!--背景和主要标题    -->
+    <div class="bg">
+        <section class="title">
+            <div class="l">
+                <span class="head_img"><img src="./img/m_img/head1.jpg" alt=""></span>
             </div>
-            <div class="item">
-                <i></i>
-                <!--<img src="./img/m_img/nav-2.jpg" alt="">-->
-                <span>同城小组</span>
-            </div>
-            <div class="item">
-                <i></i>
-                <!--<img src="./img/m_img/nav-3.jpg" alt="">-->
-                <span>创业小组</span>
-            </div>
-            <div class="item">
-                <i></i>
-                <!--<img src="./img/m_img/nav-4.jpg" alt="">-->
-                <span>小组入驻</span>
+            <div class="r item">
+                <span class="user_name">求求你别秀了</span>
+                <span class="introduction">这个人很懒，什么都没写</span>
             </div>
         </section>
-        <!--小组模块,使用grid-->
-        <section class="group">
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-        </section>
-    </section>
+    </div>
 </section>
-<!--脚部的页面切换按钮 90-->
-<!--准备加一个上滑出现脚部的动画 18 06/13-->
-<footer class="footer">
-    <div class="item on">
-        <i></i>
-        <!--<img src="./img/m_img/home@3x.png" alt="">-->
-        <span>主页</span>
-    </div>
-    <div class="item off">
-        <i></i>
-        <!--<img src="./img/m_img/8@3x.png" alt="">-->
-        <span>实战</span>
-    </div>
-    <div class="item off">
-        <i></i>
-        <!--<img src="./img/m_img/9@3x.png" alt="">-->
-        <span>知识体系</span>
-    </div>
-    <div class="item off">
-        <i></i>
-        <!--<img src="./img/m_img/t-44@3x.png" alt="">-->
-        <span>有空</span>
-    </div>
-    <div class="item off">
-        <i></i>
-        <!--<img src="./img/m_img/data@3x.png" alt="">-->
-        <span>个人</span>
-    </div>
-</footer>
-
-
 </body>
 </html>

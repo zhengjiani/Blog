@@ -1,0 +1,86 @@
+@rem: 30rem;
+
+/*头部内容*/
+.header {
+  > i {
+    width: 64/@rem;
+    height: 64/@rem;
+    border-radius: 50%;
+  }
+  > .menu {
+    position: absolute;
+    left: 44/@rem;
+    top: 8/@rem;
+    background: url("../../img/m_img/t-16@3x.png") no-repeat center;
+    background-size: cover;
+  }
+  > .message {
+    position: absolute;
+    right: 44/@rem;
+    top: 8/@rem;
+    background: url("../../img/m_img/me1.jpg") no-repeat center;
+    background-size: cover;
+  }
+}
+
+/*主体部分css*/
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //padding-top: 80/@rem;
+  padding-bottom: 120/@rem;
+  //overflow: hidden;
+  /* 背景和主要标题 */
+  > .bg {
+    z-index: 900;
+    position: relative;
+    width: 100%;
+    height: 264/@rem;
+    background: linear-gradient(to right, #4780af, #7dcdee);
+    > .title {
+      position: relative;
+      width: 672/@rem;
+      height: 252/@rem;
+      top: 136/@rem;
+      margin: 0 auto;
+      padding: 50/@rem 0 22/@rem 49/@rem;
+      border: 2/@rem solid #e8e8e8;
+      border-radius: 10/@rem;
+      background-color: white;
+      span {
+        display: block;
+        font-size: 26/@rem;
+      }
+      > .l {
+        float: left;
+        > .head_img{
+          text-align: center;
+          width: 122/@rem;
+          height: 122/@rem;
+          border: 5/@rem solid #34ccfe;
+          border-radius: 50%;
+          overflow: hidden;
+          > img {
+            height: 100%;
+          }
+        }
+      }
+      > .r {
+        padding-left: 20/@rem;
+        float: left;
+        > .user_name {
+          font-size: 30/@rem;
+          color: #5d5d5d;
+          margin-top: 20/@rem;
+          margin-bottom: 10/@rem;
+        }
+        > .introduction {
+          font-size: 24/@rem;
+          color: #c3c4c4;
+        }
+      }
+
+    }
+  }
+}
