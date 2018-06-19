@@ -1,5 +1,4 @@
 var Carousel = function (ele) {
-
     // 添加切換標籤頁暫停動畫的功能
     window.addEventListener('focus', function() {
         auto_animate(1,500);
@@ -10,9 +9,7 @@ var Carousel = function (ele) {
         while (timer.length>0){
             clearInterval(timer.pop());
         }
-
     },false);
-
     // 暂时默认轮播图数量大于三个
     var ul = ele.getElementsByTagName('ul'),
         imgs_container = ul[0],
@@ -28,7 +25,6 @@ var Carousel = function (ele) {
     init();
     // 自动轮播？
     auto_animate(1, 500);
-
     function init() {
         for (var i = 0; i < imgs_length; i++) {
             imgs_li[i].style.left = -i * img_width + 'px';
@@ -53,6 +49,10 @@ var Carousel = function (ele) {
     // 自动轮播
     function auto_animate(direct, speed) {
         console.log('添加了一个定时器');
+        // 添加之前需要清空所有定时器么？定时器类型单一，可以，双保险
+        while (timer.length>0){
+            clearInterval(timer.pop());
+        }
         timer.push(setInterval(function () {
             // 每一轮开始之后都会刷新，动画过程中执行了拖拽会怎么样？
             // 别的网站好像直接将图片置于初始状态了
@@ -95,18 +95,16 @@ var Carousel = function (ele) {
     ele.addEventListener('touchstart', function (e) {
         p_s = e.targetTouches[0].clientX;
         e.stopPropagation();
+        // 点击时清除定时器
+        while (timer.length>0){
+            clearInterval(timer.pop());
+        }
     })
     ele.addEventListener('touchmove', function (e) {
         // 阻止屏幕竖向横向的移动
         e.preventDefault();
         p_n = e.targetTouches[0].clientX;
         p_d = p_n - p_s;
-        if (Math.abs(p_d) > imgs_length / 10) {
-            console.log('清除了一个定时器');
-            while (timer.length>0){
-                clearInterval(timer.pop());
-            }
-        }
         // 怎样才能将这些无用的设置只执行一次？
         imgs_li[before].style.transitionDuration = 0 + 'ms';
         imgs_li[now].style.transitionDuration = 0 + 'ms';
